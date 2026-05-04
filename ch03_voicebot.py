@@ -6,6 +6,7 @@ from audiorecorder import audiorecorder
 
 import openai
 from datetime import datetime
+import pytz
 
 from gtts import gTTS
 import base64
@@ -135,7 +136,8 @@ def main():
             question=STT(audio,st.session_state["OPENAI_API"])
             
             #채팅을 시각화 하기 위해 질문 내용 저장
-            now = datetime.now().strftime("%H:%M")
+            kst = pytz.timezone('Asia/Seoul')
+            now = datetime.now(kst).strftime("%H:%M")
             st.session_state['chat'] = st.session_state['chat']+[('user',now,question)]
             #GPT 모델에 넣을 프롬프트를 위해 질문 내용 저장
             st.session_state['messages'] = st.session_state['messages']+[{'role':'user','content':question}]
@@ -151,7 +153,8 @@ def main():
             st.session_state['messages']=st.session_state['messages']+[{'role':'assistant','content':response}]
             
             #채팅 시각화를 위한 답변 내용 저장
-            now = datetime.now().strftime("%H:%M")
+            kst = pytz.timezone('Asia/Seoul')
+            now = datetime.now(kst).strftime("%H:%M")
             st.session_state['chat'] = st.session_state['chat']+[('bot',now,response)]
             
             #채팅 형식으로 시각화하기
