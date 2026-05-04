@@ -3,3 +3,4 @@ streamlit
 streamlit-audiorecorder
 gTTS
 pydub
+pytz
