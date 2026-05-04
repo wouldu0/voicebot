@@ -27,7 +27,7 @@ def STT(audio,apikey):
     return responds.text
 
 def ask_gpt(prompt,model,apikey):
-    client=openai.OpenAI(api_key=os.getenv("API_KEY"))
+    client=openai.OpenAI(api_key=apikey)
     response=client.chat.completions.create(
         model = model,
         messages=prompt)
