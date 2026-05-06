@@ -60,7 +60,7 @@ def TTS(response):
 def main():
     #기본설정
     st.set_page_config(
-        page_title='류주영 음성 비서 프로그램',
+        page_title='🤖류주영 음성 비서 프로그램',
         layout='wide'
     )
     
