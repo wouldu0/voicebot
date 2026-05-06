@@ -66,9 +66,6 @@ st.markdown("""
     [data-testid="stSidebar"] {
         background-color: #C2E9F7;
     }
-    [data-testid="stCustomComponentV1"] iframe {
-    width: 100% !important;
-    }
     /* 버튼 색 */
     .stButton > button {
         background-color: #29B5E8;
