@@ -72,9 +72,9 @@ st.markdown("""
         color: white;
         border: none;
     }
-    [data-testid="stCustomComponentV1"] {
+    [data-testid="stCustomComponentV1"] iframe {
         background-color: #E8F7FD !important;
-        border-radius: 8px;
+        width: 100% !important;
     }
     /* 글자색 */
     html, body, [class*="css"] {
