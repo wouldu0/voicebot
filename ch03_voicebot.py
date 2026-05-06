@@ -117,7 +117,8 @@ def main():
             #리셋코드
             st.session_state["chat"] = []
             st.session_state["messages"] = [{'role':'system','content':'You are a thoughtful assistant. Respond to all input in 25 words and answer in korean'}]
-            st.session_state['check_reset'] = True
+            st.session_state['last_audio_duration'] = 0
+            st.rerun()
 
     if st.session_state['check_reset']:
         st.session_state['check_reset'] = False
@@ -129,14 +130,14 @@ def main():
         st.subheader('질문하기')
         #음성 녹음 아이콘 추가
         audio=audiorecorder("클릭하여 녹음하기", "녹음중...")
-        if (audio.duration_seconds > 0) and (st.session_state['check_reset']==False): #녹음을 실행하면?
+        if (audio.duration_seconds > 0) and (audio.duration_seconds != st.session_state.get('last_audio_duration',0)): #녹음을 실행하면?
             #음성재생
-            st.audio(audio.export().read())
+            st.session_state['last_audio_duration']=audio.duration_seconds
             #음원 파일에서 텍스트 추출
             question=STT(audio,st.session_state["OPENAI_API"])
             
             #채팅을 시각화 하기 위해 질문 내용 저장
-            kst = pytz.timezone('Asia/Seoul')
+            kst=pytz.timezone('Asia/Seoul')
             now = datetime.now(kst).strftime("%H:%M")
             st.session_state['chat'] = st.session_state['chat']+[('user',now,question)]
             #GPT 모델에 넣을 프롬프트를 위해 질문 내용 저장
@@ -153,7 +154,7 @@ def main():
             st.session_state['messages']=st.session_state['messages']+[{'role':'assistant','content':response}]
             
             #채팅 시각화를 위한 답변 내용 저장
-            kst = pytz.timezone('Asia/Seoul')
+            kst=pytz.timezone('Asia/Seoul')
             now = datetime.now(kst).strftime("%H:%M")
             st.session_state['chat'] = st.session_state['chat']+[('bot',now,response)]
             
