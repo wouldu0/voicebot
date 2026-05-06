@@ -56,6 +56,29 @@ def TTS(response):
     #파일삭제
     os.remove(filename)
 
+st.markdown("""
+    <style>
+    /* 메인 배경 */
+    .stApp {
+        background-color: #E8F7FD;
+    }
+    /* 사이드바 배경 */
+    [data-testid="stSidebar"] {
+        background-color: #C2E9F7;
+    }
+    /* 버튼 색 */
+    .stButton > button {
+        background-color: #29B5E8;
+        color: white;
+        border: none;
+    }
+    /* 글자색 */
+    html, body, [class*="css"] {
+        color: #1A3A4A;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 ##메인함수##
 def main():
     #기본설정
