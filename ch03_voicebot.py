@@ -60,7 +60,7 @@ st.markdown("""
     <style>
     /* 메인 배경 */
     .stApp {
-        background-color: #E8F7FD;
+        background-color: #FFFFFF;
     }
     /* 사이드바 배경 */
     [data-testid="stSidebar"] {
@@ -71,10 +71,6 @@ st.markdown("""
         background-color: #29B5E8;
         color: white;
         border: none;
-    }
-    [data-testid="stCustomComponentV1"] iframe {
-        background-color: #E8F7FD !important;
-        width: 100% !important;
     }
     /* 글자색 */
     html, body, [class*="css"] {
