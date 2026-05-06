@@ -76,6 +76,14 @@ st.markdown("""
     html, body, [class*="css"] {
         color: #1A3A4A;
     }
+    /* 녹음 버튼 흰 배경 제거 */
+    iframe {
+    background-color: transparent !important;
+    }
+    [data-testid="stCustomComponentV1"] {
+        background-color: transparent !important;
+        border: none !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
