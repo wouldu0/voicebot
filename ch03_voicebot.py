@@ -153,10 +153,7 @@ def main():
         #왼쪽 영역 작성
         st.subheader('질문하기')
         #음성 녹음 아이콘 추가
-        audio=audiorecorder(start_prompt="클릭하여 녹음하기🎙️", stop_prompt= "⏺️ 녹음중...",
-                           show_visualizer=True,
-                           start_style={"backgroundColor": "#E8F7FD", "color": "white", "border": "none", "borderRadius": "8px"},
-                           stop_style={"backgroundColor": "#E8F7FD", "color": "white", "border": "none", "borderRadius": "8px"},)
+        audio=audiorecorder(start_prompt="클릭하여 녹음하기🎙️", stop_prompt= "⏺️ 녹음중...",)
         if (audio.duration_seconds > 0) and (audio.duration_seconds != st.session_state.get('last_audio_duration',0)): #녹음을 실행하면?
             #음성재생
             st.session_state['last_audio_duration']=audio.duration_seconds
