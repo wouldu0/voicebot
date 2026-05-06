@@ -72,6 +72,10 @@ st.markdown("""
         color: white;
         border: none;
     }
+    [data-testid="stCustomComponentV1"] {
+        background-color: #E8F7FD !important;
+        border-radius: 8px;
+    }
     /* 글자색 */
     html, body, [class*="css"] {
         color: #1A3A4A;
