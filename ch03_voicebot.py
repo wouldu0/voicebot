@@ -88,7 +88,7 @@ def main():
     )
     
     #제목
-    st.header('🤖 류주영 음성 비서 프로그램')
+    st.header('🤖 주영 음성 비서 프로그램')
     st.caption('Whisper·GPT·gTTS 기반 한국어 음성 대화 비서')
     
     #구분선
@@ -153,7 +153,7 @@ def main():
         #왼쪽 영역 작성
         st.subheader('질문하기')
         #음성 녹음 아이콘 추가
-        audio=audiorecorder("클릭하여 녹음하기", "녹음중...")
+        audio=audiorecorder("클릭하여 녹음하기🎙️", "⏺️ 녹음중...")
         if (audio.duration_seconds > 0) and (audio.duration_seconds != st.session_state.get('last_audio_duration',0)): #녹음을 실행하면?
             #음성재생
             st.session_state['last_audio_duration']=audio.duration_seconds
