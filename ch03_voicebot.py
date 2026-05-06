@@ -66,6 +66,7 @@ def main():
     
     #제목
     st.header('🤖 류주영 음성 비서 프로그램')
+    st.caption('Whisper·GPT·gTTS 기반 한국어 음성 대화 비서')
     
     #구분선
     st.markdown('---')
@@ -108,7 +109,7 @@ def main():
         st.markdown('---')
         
         #GPT 모델을 선택하기 위한 라디오 버튼 생성
-        model = st.radio(label="GPT 모델", options = ['gpt-4','gpt-3.5-turbo'])
+        model = st.radio(label="GPT 모델", options = ['gpt-4o','gpt-4','gpt-3.5-turbo'])
         
         st.markdown('---')
         
