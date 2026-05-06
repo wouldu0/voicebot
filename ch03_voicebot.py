@@ -65,7 +65,7 @@ def main():
     )
     
     #제목
-    st.header('🤖류주영 음성 비서 프로그램')
+    st.header('🤖 류주영 음성 비서 프로그램')
     
     #구분선
     st.markdown('---')
