@@ -91,7 +91,7 @@ def main():
         st.session_state["OPENAI_API"] = ""
     
     if "messages" not in st.session_state:
-        st.session_state['messages'] = [{'role':'system','content':'You are a thoughtful assistant. Respond to all input in 25 words and answer in korean'}]
+        st.session_state['messages'] = [{'role':'system','content': '당신은 친절한 한국어 assistant입니다. 모든 질문에 반드시 한국어로만 대답하세요. 답변은 25단어 이내로 간결하게 합니다.'}]
     
     if "check_audio" not in st.session_state:
         st.session_state["check_audio"] = False
@@ -116,7 +116,7 @@ def main():
         if st.button(label='초기화'):
             #리셋코드
             st.session_state["chat"] = []
-            st.session_state["messages"] = [{'role':'system','content':'You are a thoughtful assistant. Respond to all input in 25 words and answer in korean'}]
+            st.session_state["messages"] = [{'role':'system','content': '당신은 친절한 한국어 assistant입니다. 모든 질문에 반드시 한국어로만 대답하세요. 답변은 25단어 이내로 간결하게 합니다.'}]
             st.session_state['last_audio_duration'] = 0
             st.rerun()
 
